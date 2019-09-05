@@ -1,0 +1,50 @@
+title User creates a new note
+
+note over Browser:
+User creates a note and clicks "submit"
+Note data is sent as the body of the POST request
+end note
+
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+
+note over Server:
+Creates new object from data (note and date)
+Adds object to 'notes' array
+end note
+
+Server-->Browser: (302) URL redirect
+
+note over Browser:
+Browser reloads page
+end note
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+Server-->Browser: HTML code
+
+note left of Browser:
+The rest of this follows the example given in the section:
+Loading a page containing JavaScript - revised
+end note
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+Server-->Browser: main.js
+
+note over Browser:
+Browser starts executing js code
+tht requests JSON data from server
+end note
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+Server-->Browser: [{content: "A note that I wrote", date: "2019-09-04"}]
+
+note over Browser:
+Browser executes the event handler
+that renders the notes to the page
+using the DOM-API
+end note
+
+note left of Browser:
+I smile :)
+end note

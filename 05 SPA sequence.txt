@@ -1,0 +1,29 @@
+title SPA sequence
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+
+Server-->Browser: HTML code
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+Server-->Browser: spa.js
+
+note over Browser:
+Browser starts executing js code
+tht requests JSON data from server
+end note
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+Server-->Browser: contents of data.json file
+
+note over Browser:
+Browser executes the event handler
+that renders the notes to the page
+using the DOM-API
+end note
+
+note left of Browser:
+I smile some more :)
+end note
+

@@ -1,0 +1,26 @@
+title SPA sequence
+
+
+note over Browser:
+User creates a note and clicks "submit"
+New note sent as JSON-data containing content and date
+end note
+
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+note over Server:
+Server executes the event handler
+that calls e.preventDefault() to stop redirect
+The event handler pushes the note to the notes list
+Then rerenders the note list on the page
+end note
+
+Server-->Browser: (201) created
+
+note over Browser:
+Browser rerenders with new note
+end note
+
+note left of Browser:
+I smile even more :)
+end note
